@@ -7,12 +7,12 @@ public class Game {
 
         cards = new Card[52];
         String[] marks = {"♠","♥","♣","♦"};
-        for (int i=0 ; i<52 ; i++) {
+        for (int i=0 ; i<4 ; i++) {
             for (int j=0 ; j<13 ; j++) {
                 Card c = new Card();
-            c.mark = marks[i];
-            c.number = j+1;
-            cards[i*13+j] = c;
+                c.mark = marks[i];
+                c.number = j+1;
+                cards[i*13+j] = c;
             }
         }
     }
