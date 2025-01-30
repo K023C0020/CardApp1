@@ -18,14 +18,21 @@ public class Game {
     }
 
     void start() {
-        Card c = p.turn(cards);
-        c.open();
-        judge(c);
+        Card c1 = p.turn(cards);
+        c1.open();
+        Card c2 = p.turn(cards);
+        String ans = p.answer();
+        judge(c1, c2, ans);
     }
 
-    void judge(Card c) {
-        if (c.number >= 10) {
+    void judge(Card c1, Card c2, String ans) {
+        c2.open();
+        if ((ans.equals("h") && c1.number < c2.number) || (ans.equals("l") && c1.number > c2.number) ) {
             System.out.println("勝ち！！");
+        } else if (c1.number==c2.number) {
+            System.out.println("引き分け");
+        } else {
+            System.out.println("負け");
         }
     }
 
